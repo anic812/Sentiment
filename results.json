@@ -1,0 +1,585 @@
+{
+  "missing": {
+    "Review_Summary": 240,
+    "Customer_City": 300,
+    "Payment_Method": 150
+  },
+  "dups": {
+    "id": 0,
+    "text": 29040,
+    "unique_text": 960,
+    "combo": 0,
+    "full": 0
+  },
+  "invalid_checks": {
+    "Product_Price <= 0": 0,
+    "Selling_Price <= 0": 0,
+    "Selling_Price > Product_Price": 0,
+    "Selling_Price != Price x (1-discount) (\u00b12)": 0,
+    "Discount outside 0-100 %": 0,
+    "Discount = 0 % (valid, just no offer)": 1068,
+    "Rating outside 1-5": 0,
+    "Delivery_Days <= 0": 0,
+    "Delivery_Days >= 10 (slow, plausible)": 76,
+    "Experience score outside 1-5": 0,
+    "Review date in the future": 0,
+    "Review_Confidence outside 0-1": 0
+  },
+  "n_heads": 30,
+  "n_tails": 32,
+  "sentiment_pct": {
+    "Negative": 17.7,
+    "Neutral": 20.1,
+    "Positive": 62.2
+  },
+  "sentiment_n": {
+    "Negative": 5310,
+    "Neutral": 6019,
+    "Positive": 18671
+  },
+  "top_category": [
+    "Appliances",
+    3814
+  ],
+  "discount": {
+    "p": 0.10126519256777419,
+    "rho": 0.00207173907649419
+  },
+  "delivery_exp_rho": 0.003075882504698939,
+  "verified_p": 0.7204994690584023,
+  "length_by_sentiment": {
+    "n_words": {
+      "Negative": 10.8,
+      "Neutral": 10.42,
+      "Positive": 10.51
+    },
+    "n_chars": {
+      "Negative": 66.84,
+      "Neutral": 63.97,
+      "Positive": 68.18
+    }
+  },
+  "preproc_table": [
+    {
+      "variant": "text_clean",
+      "vocab": 140,
+      "avg_tokens": 10.543,
+      "macroF1_random_cv": 1.0,
+      "macroF1_unseen_phrase_cv": 0.8463
+    },
+    {
+      "variant": "text_nostop",
+      "vocab": 116,
+      "avg_tokens": 7.4481,
+      "macroF1_random_cv": 1.0,
+      "macroF1_unseen_phrase_cv": 0.825
+    },
+    {
+      "variant": "text_stem",
+      "vocab": 116,
+      "avg_tokens": 7.5318,
+      "macroF1_random_cv": 1.0,
+      "macroF1_unseen_phrase_cv": 0.9208
+    },
+    {
+      "variant": "text_lemma",
+      "vocab": 116,
+      "avg_tokens": 7.5318,
+      "macroF1_random_cv": 1.0,
+      "macroF1_unseen_phrase_cv": 0.9208
+    }
+  ],
+  "text_col": "text_lemma",
+  "test_text_overlap_pct": 95.41666666666667,
+  "bow_shape": [
+    24000,
+    116
+  ],
+  "tfidf_ngram": [
+    {
+      "representation": "unigram",
+      "n_features": 116,
+      "macroF1_random": 1.0,
+      "macroF1_unseen_phrase": 0.8534
+    },
+    {
+      "representation": "bigram",
+      "n_features": 888,
+      "macroF1_random": 1.0,
+      "macroF1_unseen_phrase": 0.5819
+    },
+    {
+      "representation": "uni+bigram",
+      "n_features": 1004,
+      "macroF1_random": 1.0,
+      "macroF1_unseen_phrase": 0.8877
+    }
+  ],
+  "ml": [
+    {
+      "model": "Naive Bayes",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.678678930780975,
+      "holdout_macro_f1": 0.6967859077457159,
+      "holdout_f1_std": 0.13971318061632446,
+      "train_sec": 0.0054590702056884766,
+      "ms_per_review": 0.009514649709065756
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.9450261325851741,
+      "holdout_macro_f1": 0.9298195305907025,
+      "holdout_f1_std": 0.03738653574259209,
+      "train_sec": 0.09659838676452637,
+      "ms_per_review": 0.009788831075032553
+    },
+    {
+      "model": "Linear SVM",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.7963065964320398,
+      "holdout_macro_f1": 0.8079681034528111,
+      "holdout_f1_std": 0.11347551554074141,
+      "train_sec": 0.23700380325317383,
+      "ms_per_review": 0.01221795876820882
+    }
+  ],
+  "best_ml_initial": "Logistic Regression",
+  "ml_report": {
+    "Negative": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1062.0
+    },
+    "Neutral": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1204.0
+    },
+    "Positive": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3734.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6000.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6000.0
+    }
+  },
+  "imbalance": [
+    {
+      "strategy": "No correction",
+      "macroF1_random": 1.0,
+      "macroF1_unseen_phrase": 0.9298195305907025,
+      "recall_per_class_unseen (Neg/Neu/Pos)": [
+        0.926,
+        0.902,
+        0.964
+      ]
+    },
+    {
+      "strategy": "class_weight=balanced",
+      "macroF1_random": 1.0,
+      "macroF1_unseen_phrase": 0.8526356351657235,
+      "recall_per_class_unseen (Neg/Neu/Pos)": [
+        0.967,
+        0.919,
+        0.801
+      ]
+    },
+    {
+      "strategy": "Random oversampling",
+      "macroF1_random": 1.0,
+      "macroF1_unseen_phrase": 0.8147477484659742,
+      "recall_per_class_unseen (Neg/Neu/Pos)": [
+        0.959,
+        0.911,
+        0.747
+      ]
+    }
+  ],
+  "tuning": {
+    "model": "Logistic Regression",
+    "best_params": {
+      "clf__C": "1",
+      "tfidf__min_df": "1",
+      "tfidf__ngram_range": "(1, 2)"
+    },
+    "cv_f1": 0.9013572217119489,
+    "test": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0
+    }
+  },
+  "top_features": {
+    "Negative": [
+      "disappoint",
+      "not",
+      "poor",
+      "defective",
+      "bad",
+      "waste money",
+      "waste",
+      "disappoint purchase",
+      "not worth",
+      "poor quality",
+      "not good",
+      "much better"
+    ],
+    "Neutral": [
+      "average",
+      "okay",
+      "fair",
+      "decent",
+      "acceptable",
+      "performance acceptable",
+      "could better",
+      "enough",
+      "good enough",
+      "could",
+      "receive product",
+      "usable"
+    ],
+    "Positive": [
+      "excellent",
+      "love",
+      "superb",
+      "great",
+      "worth",
+      "better expect",
+      "expect satisfy",
+      "satisfy",
+      "awesome",
+      "really",
+      "happy purchase",
+      "happy"
+    ]
+  },
+  "ml_tuned_holdout": {
+    "accuracy": 0.9450261325851741,
+    "precision": 0.938545538424683,
+    "recall": 0.9305983290230004,
+    "macro_f1": 0.9298195305907025,
+    "macro_f1_std": 0.03738653574259209
+  },
+  "ml_holdout_confusions": {
+    "Negative->Neutral": 5,
+    "Negative->Positive": 5,
+    "Neutral->Negative": 322,
+    "Neutral->Positive": 49,
+    "Positive->Negative": 374
+  },
+  "dl_vocab": 118,
+  "dl_maxlen": 10,
+  "dl_experiments": [
+    {
+      "config": "baseline",
+      "unseen_phrase_macro_f1": 0.8874,
+      "std_over_2_draws": 0.02,
+      "sec_per_run": 20.9523
+    },
+    {
+      "config": "emb=16",
+      "unseen_phrase_macro_f1": 0.8496,
+      "std_over_2_draws": 0.0444,
+      "sec_per_run": 21.1809
+    },
+    {
+      "config": "emb=64",
+      "unseen_phrase_macro_f1": 0.9413,
+      "std_over_2_draws": 0.0369,
+      "sec_per_run": 22.6296
+    },
+    {
+      "config": "maxlen=8",
+      "unseen_phrase_macro_f1": 0.8909,
+      "std_over_2_draws": 0.0298,
+      "sec_per_run": 20.5824
+    },
+    {
+      "config": "maxlen=12",
+      "unseen_phrase_macro_f1": 0.8874,
+      "std_over_2_draws": 0.02,
+      "sec_per_run": 23.774
+    },
+    {
+      "config": "units=16",
+      "unseen_phrase_macro_f1": 0.932,
+      "std_over_2_draws": 0.0592,
+      "sec_per_run": 19.2882
+    },
+    {
+      "config": "units=64",
+      "unseen_phrase_macro_f1": 0.8722,
+      "std_over_2_draws": 0.0086,
+      "sec_per_run": 37.0182
+    },
+    {
+      "config": "dropout=0.0",
+      "unseen_phrase_macro_f1": 0.9331,
+      "std_over_2_draws": 0.023,
+      "sec_per_run": 21.1128
+    },
+    {
+      "config": "dropout=0.5",
+      "unseen_phrase_macro_f1": 0.843,
+      "std_over_2_draws": 0.0453,
+      "sec_per_run": 21.3526
+    },
+    {
+      "config": "batch=32",
+      "unseen_phrase_macro_f1": 0.828,
+      "std_over_2_draws": 0.0469,
+      "sec_per_run": 60.2957
+    },
+    {
+      "config": "batch=256",
+      "unseen_phrase_macro_f1": 0.8944,
+      "std_over_2_draws": 0.0282,
+      "sec_per_run": 21.6506
+    }
+  ],
+  "best_dl": "LSTM",
+  "dl": [
+    {
+      "model": "Embedding + Dense",
+      "params": 4931,
+      "epochs": 8,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "val_macro_f1": 1.0,
+      "train_sec": 5.552945375442505,
+      "ms_per_review": 0.058083415031433105,
+      "holdout_accuracy": 0.8571847826269249,
+      "holdout_macro_f1": 0.8335065853496655,
+      "holdout_f1_std": 0.056018780471122825
+    },
+    {
+      "model": "LSTM",
+      "params": 12195,
+      "epochs": 8,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "val_macro_f1": 1.0,
+      "train_sec": 11.610105276107788,
+      "ms_per_review": 0.10818131764729819,
+      "holdout_accuracy": 0.962330286009396,
+      "holdout_macro_f1": 0.9592029924093112,
+      "holdout_f1_std": 0.03565381789783312
+    },
+    {
+      "model": "BiLSTM",
+      "params": 20611,
+      "epochs": 8,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "val_macro_f1": 1.0,
+      "train_sec": 22.638519525527954,
+      "ms_per_review": 0.21771772702534994,
+      "holdout_accuracy": 0.910138761093885,
+      "holdout_macro_f1": 0.8806416966938043,
+      "holdout_f1_std": 0.025793675112941367
+    }
+  ],
+  "dl_report": {
+    "Negative": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1062.0
+    },
+    "Neutral": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1204.0
+    },
+    "Positive": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3734.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6000.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6000.0
+    }
+  },
+  "final_compare": [
+    {
+      "model": "Tuned Logistic Regression (TF-IDF)",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.9450261325851741,
+      "holdout_macro_f1": 0.9298195305907025,
+      "train_sec": 0.09659838676452637,
+      "ms_per_review": 0.009788831075032553,
+      "size_kb": 51.58203125
+    },
+    {
+      "model": "LSTM (Keras)",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.962330286009396,
+      "holdout_macro_f1": 0.9592029924093112,
+      "train_sec": 11.610105276107788,
+      "ms_per_review": 0.11078230539957683,
+      "size_kb": 175.30859375
+    }
+  ],
+  "common": [
+    {
+      "family": "Traditional ML",
+      "model": "Naive Bayes",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.6787,
+      "holdout_macro_f1": 0.6968
+    },
+    {
+      "family": "Traditional ML",
+      "model": "Logistic Regression",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.945,
+      "holdout_macro_f1": 0.9298
+    },
+    {
+      "family": "Traditional ML",
+      "model": "Linear SVM",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.7963,
+      "holdout_macro_f1": 0.808
+    },
+    {
+      "family": "Deep Learning",
+      "model": "Embedding + Dense",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.8572,
+      "holdout_macro_f1": 0.8335
+    },
+    {
+      "family": "Deep Learning",
+      "model": "LSTM",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.9623,
+      "holdout_macro_f1": 0.9592
+    },
+    {
+      "family": "Deep Learning",
+      "model": "BiLSTM",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "macro_f1": 1.0,
+      "holdout_accuracy": 0.9101,
+      "holdout_macro_f1": 0.8806
+    }
+  ],
+  "demo": [
+    {
+      "review": "Loved it | Perfect purchase, loved it, battery life is decent.",
+      "expected": "Positive",
+      "ML": "Positive (99%)",
+      "DL": "Positive (100%)"
+    },
+    {
+      "review": "Average | Decent product but nothing special, size was accurate.",
+      "expected": "Neutral",
+      "ML": "Neutral (99%)",
+      "DL": "Neutral (100%)"
+    },
+    {
+      "review": "Waste of money | Product stopped working after a few days.",
+      "expected": "Negative",
+      "ML": "Negative (100%)",
+      "DL": "Negative (100%)"
+    },
+    {
+      "review": "The phone is amazing, the camera is outstanding and the battery easily",
+      "expected": "Positive",
+      "ML": "Positive (60%)",
+      "DL": "Positive (100%)"
+    },
+    {
+      "review": "Terrible. It stopped charging within a week and customer support was u",
+      "expected": "Negative",
+      "ML": "Negative (78%)",
+      "DL": "Negative (100%)"
+    },
+    {
+      "review": "It's okay I guess, does the job but nothing to write home about.",
+      "expected": "Neutral",
+      "ML": "Neutral (99%)",
+      "DL": "Neutral (100%)"
+    },
+    {
+      "review": "Not good at all, would not buy again.",
+      "expected": "Negative",
+      "ML": "Negative (100%)",
+      "DL": "Negative (100%)"
+    },
+    {
+      "review": "Great product | Very good quality but delivery was late and packaging was damaged.",
+      "expected": "Mixed",
+      "ML": "Negative (63%)",
+      "DL": "Positive (100%)"
+    }
+  ],
+  "best_ml": "Logistic Regression"
+}

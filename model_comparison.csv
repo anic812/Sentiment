@@ -1,0 +1,7 @@
+family,model,accuracy,precision,recall,macro_f1,holdout_accuracy,holdout_macro_f1
+Traditional ML,Naive Bayes,1.0,1.0,1.0,1.0,0.6787,0.6968
+Traditional ML,Logistic Regression,1.0,1.0,1.0,1.0,0.945,0.9298
+Traditional ML,Linear SVM,1.0,1.0,1.0,1.0,0.7963,0.808
+Deep Learning,Embedding + Dense,1.0,1.0,1.0,1.0,0.8572,0.8335
+Deep Learning,LSTM,1.0,1.0,1.0,1.0,0.9623,0.9592
+Deep Learning,BiLSTM,1.0,1.0,1.0,1.0,0.9101,0.8806

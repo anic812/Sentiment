@@ -1,0 +1,165 @@
+{
+ "order": [
+  "Negative",
+  "Neutral",
+  "Positive"
+ ],
+ "random_split": {
+  "n_test": 6000,
+  "lr": [
+   [
+    1062,
+    0,
+    0
+   ],
+   [
+    0,
+    1204,
+    0
+   ],
+   [
+    0,
+    0,
+    3734
+   ]
+  ],
+  "lstm": [
+   [
+    1062,
+    0,
+    0
+   ],
+   [
+    0,
+    1204,
+    0
+   ],
+   [
+    0,
+    0,
+    3734
+   ]
+  ]
+ },
+ "unseen": {
+  "n_test": 9113,
+  "lr": [
+   [
+    1623,
+    5,
+    5
+   ],
+   [
+    322,
+    1379,
+    49
+   ],
+   [
+    374,
+    0,
+    5356
+   ]
+  ],
+  "lstm": [
+   [
+    1633,
+    0,
+    0
+   ],
+   [
+    5,
+    1745,
+    0
+   ],
+   [
+    592,
+    0,
+    5138
+   ]
+  ],
+  "draw": 42,
+  "phrases": [
+   {
+    "phrase": "very poor experience with this product",
+    "true": "Negative",
+    "n": 553,
+    "lr_error": 0.012658227848101266,
+    "lstm_error": 0.0,
+    "lr_pred": "Negative",
+    "lstm_pred": "Negative"
+   },
+   {
+    "phrase": "disappointed with this purchase",
+    "true": "Negative",
+    "n": 536,
+    "lr_error": 0.005597014925373134,
+    "lstm_error": 0.0,
+    "lr_pred": "Negative",
+    "lstm_pred": "Negative"
+   },
+   {
+    "phrase": "quality is poor and performance is bad",
+    "true": "Negative",
+    "n": 544,
+    "lr_error": 0.0,
+    "lstm_error": 0.0,
+    "lr_pred": "Negative",
+    "lstm_pred": "Negative"
+   },
+   {
+    "phrase": "average quality for the price",
+    "true": "Neutral",
+    "n": 552,
+    "lr_error": 0.0,
+    "lstm_error": 0.0,
+    "lr_pred": "Neutral",
+    "lstm_pred": "Neutral"
+   },
+   {
+    "phrase": "decent product but nothing special",
+    "true": "Neutral",
+    "n": 589,
+    "lr_error": 0.0,
+    "lstm_error": 0.0,
+    "lr_pred": "Neutral",
+    "lstm_pred": "Neutral"
+   },
+   {
+    "phrase": "quality is neither very good nor very bad",
+    "true": "Neutral",
+    "n": 609,
+    "lr_error": 0.6091954022988506,
+    "lstm_error": 0.008210180623973728,
+    "lr_pred": "Negative",
+    "lstm_pred": "Neutral"
+   },
+   {
+    "phrase": "value for money and highly recommended",
+    "true": "Positive",
+    "n": 1871,
+    "lr_error": 0.09299839657936933,
+    "lstm_error": 0.14698022447888828,
+    "lr_pred": "Positive",
+    "lstm_pred": "Positive"
+   },
+   {
+    "phrase": "delivery was fast and packaging was excellent",
+    "true": "Positive",
+    "n": 1948,
+    "lr_error": 0.0,
+    "lstm_error": 0.16273100616016428,
+    "lr_pred": "Positive",
+    "lstm_pred": "Positive"
+   },
+   {
+    "phrase": "amazing product totally worth the price",
+    "true": "Positive",
+    "n": 1911,
+    "lr_error": 0.10465724751439037,
+    "lstm_error": 0.0,
+    "lr_pred": "Positive",
+    "lstm_pred": "Positive"
+   }
+  ]
+ }
+}
